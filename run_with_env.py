@@ -10,7 +10,7 @@ print("=" * 60)
 
 # Set environment variables directly
 print("\n1. Setting environment variables...")
-os.environ['GEMINI_API_KEY'] = 'AIzaSyB_Mo954YQfmRs8Ptjsik4cvfJXhoDopwk'
+
 os.environ['MODEL'] = 'gemini/gemini-1.5-pro'
 
 print("✅ GEMINI_API_KEY set")
