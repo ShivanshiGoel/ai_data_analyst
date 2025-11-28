@@ -40,7 +40,7 @@ else:
     print("\n Creating .env file...")
     
     # Create .env with the API key
-    api_key = "AIzaSyB_Mo954YQfmRs8Ptjsik4cvfJXhoDopwk"
+    
     
     with open(".env", "w") as f:
         f.write(f"GEMINI_API_KEY={api_key}\n")
