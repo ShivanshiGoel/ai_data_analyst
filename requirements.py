@@ -1,0 +1,44 @@
+# Enterprise AI Data Analyst - Requirements
+# Production-ready dependencies with Gemini AI
+
+# Core Framework
+streamlit>=1.31.0
+pandas>=2.2.0
+numpy>=1.26.3
+
+# CrewAI with tools
+crewai>=0.28.0
+crewai-tools>=0.1.0
+
+# Excel Support
+openpyxl>=3.1.2
+xlrd>=2.0.0
+
+# Data Validation
+pydantic>=2.6.0
+python-dateutil>=2.8.2
+
+# Visualization
+matplotlib>=3.8.2
+plotly>=5.18.0
+seaborn>=0.13.2
+
+# Statistical Analysis
+scipy>=1.11.0
+
+# Reporting
+reportlab>=4.1.0
+
+# LangChain Core
+langchain>=0.1.6
+langchain-community>=0.0.20
+
+# Gemini AI Support (PRIMARY LLM)
+langchain-google-genai>=1.0.0
+google-generativeai>=0.3.0
+
+# Environment Management
+python-dotenv>=1.0.0
+
+# Type Hints & Validation
+typing-extensions>=4.8.0

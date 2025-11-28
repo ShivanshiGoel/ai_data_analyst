@@ -1,0 +1,138 @@
+plan_analysis:
+  description: >
+    Analyze the user's data analysis request and create a comprehensive execution plan.
+    
+    User Request: {user_request}
+    Dataset Schema: {schema}
+    
+    Your responsibilities:
+    1. Understand the user's true intent (don't rely on keywords)
+    2. Identify which analytical operations are needed
+    3. Select relevant columns based on their semantic meaning and types
+    4. Determine the expected output format
+    5. Assess complexity and feasibility
+    
+    Consider the full context and create a strategic plan.
+  expected_output: >
+    A detailed execution plan in JSON format containing:
+    - intent_interpretation: Clear explanation of what the user wants
+    - required_operations: List of operations (cleaning, analytics, visualization, etc.)
+    - target_columns: Columns to analyze with rationale for selection
+    - expected_output: Description of expected result format
+    - confidence_score: Your confidence in the plan (0-1)
+    - notes: Any assumptions or clarifications needed
+  agent: data_planner
+
+clean_data:
+  description: >
+    Analyze data quality and perform intelligent cleaning operations.
+    
+    Dataset Schema: {schema}
+    Dataset Preview: {data_preview}
+    
+    Your responsibilities:
+    1. Profile the data to identify quality issues
+    2. Detect missing values and choose appropriate handling strategies
+    3. Identify and remove duplicates
+    4. Fix data type inconsistencies
+    5. Handle outliers if they would affect analysis
+    6. Document all cleaning operations performed
+    
+    Use intelligent, context-aware cleaning strategies.
+  expected_output: >
+    Data cleaning report containing:
+    - issues_found: List of data quality issues detected
+    - actions_taken: Detailed cleaning operations performed
+    - rows_affected: Number of rows modified or removed
+    - columns_affected: Columns that were cleaned
+    - quality_improvement: Before/after quality metrics
+    - recommendations: Suggestions for data collection improvements
+  agent: data_cleaner
+
+analyze_data:
+  description: >
+    Perform comprehensive statistical analysis and generate insights.
+    
+    User Request: {user_request}
+    Execution Plan: {plan}
+    Cleaned Data Schema: {schema}
+    
+    Your responsibilities:
+    1. Calculate relevant KPIs based on the user's needs
+    2. Perform statistical analysis (means, medians, distributions, correlations)
+    3. Generate aggregations and groupings as needed
+    4. Identify significant patterns and trends
+    5. Provide context and interpretation for the numbers
+    
+    Focus on generating actionable insights, not just numbers.
+  expected_output: >
+    Comprehensive analysis report containing:
+    - kpis: List of key performance indicators with values
+    - statistical_summary: Descriptive statistics for key metrics
+    - aggregations: Grouped data and summaries
+    - patterns: Notable patterns, trends, or anomalies discovered
+    - insights: Actionable insights and interpretations
+    - recommendations: Data-driven recommendations
+  agent: data_analyst
+
+create_visualizations:
+  description: >
+    Design and specify optimal visualizations for the analysis results.
+    
+    User Request: {user_request}
+    Analysis Results: {analysis_results}
+    Data Schema: {schema}
+    
+    Your responsibilities:
+    1. Select appropriate chart types for each insight
+    2. Choose optimal data encodings (x, y, color, size, etc.)
+    3. Design clear, informative titles and labels
+    4. Consider accessibility and readability
+    5. Follow data visualization best practices
+    6. Explain your visualization choices
+    
+    Create visualizations that tell the data story effectively.
+  expected_output: >
+    Visualization specifications containing:
+    - charts: List of chart specifications with:
+      * chart_type: Type of chart (bar, line, scatter, pie, etc.)
+      * title: Descriptive chart title
+      * data_mapping: Which columns map to which visual channels
+      * styling: Color scheme and visual properties
+      * rationale: Why this chart type was chosen
+    - layout_suggestions: How to arrange charts for maximum impact
+    - accessibility_notes: Considerations for accessibility
+  agent: visualization_expert
+
+build_dashboard:
+  description: >
+    Compose a comprehensive, executive-ready dashboard layout.
+    
+    User Request: {user_request}
+    KPIs: {kpis}
+    Visualizations: {visualizations}
+    
+    Your responsibilities:
+    1. Design optimal dashboard layout with clear information hierarchy
+    2. Position KPIs prominently at the top
+    3. Arrange charts for logical flow and story-telling
+    4. Consider visual balance and white space
+    5. Ensure the dashboard is scannable and actionable
+    6. Add contextual elements (filters, time selectors, etc.)
+    
+    Create a dashboard that executives can understand at a glance.
+  expected_output: >
+    Complete dashboard specification containing:
+    - title: Dashboard title
+    - description: Purpose and key insights
+    - layout: Grid-based layout structure
+    - sections: List of dashboard sections with:
+      * section_type: KPI, chart, table, or text
+      * position: Row and column in grid
+      * size: Width and height
+      * content: Reference to KPI or chart
+      * priority: Visual importance (high, medium, low)
+    - interactivity: Suggested filters and drill-down capabilities
+    - export_options: How this dashboard can be shared/exported
+    - update_schedule: How often data should be refreshed
+  agent: dashboard_architect
