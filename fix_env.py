@@ -113,5 +113,4 @@ else:
     print("   3. cd to project directory")
     print("   4. Run: python -m streamlit run app_enterprise.py")
     print("\nOr set manually:")
-    print("   Windows: set GEMINI_API_KEY=AIzaSyB_Mo954YQfmRs8Ptjsik4cvfJXhoDopwk")
-    print("   Linux/Mac: export GEMINI_API_KEY=AIzaSyB_Mo954YQfmRs8Ptjsik4cvfJXhoDopwk")
+    
